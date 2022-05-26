@@ -1,0 +1,36 @@
+<div class="container">
+ <ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  template="<img src = './assets/darth-vader.gif'/>">
+</ngx-spinner>
+  <div class="row" infinite-scroll (scrolled)="onScrollDown()">
+    <div class="col" *ngFor="let actor of actorslist">
+      <div class="card card-inner mx-auto">
+        <img src="./assets/actors.jpg" class="card-img" alt="..." />
+        <div class="card-img-overlay d-flex justify-content-around capa">
+          <div class="p-4">
+            <h2 class="text-muted my-3">{{ actor.name }}</h2>
+            <h4 class="text-white">Height: {{ actor.height }} cms</h4>
+            <h4 class="text-white">Mass: {{ actor.mass }} kgs</h4>
+            <h4 class="text-white">Hair color: {{ actor.hair_color }}</h4>
+            <h4 class="text-white">Skin color: {{ actor.skin_color }}</h4>
+            <h4 class="text-white">Eyes color: {{ actor.eye_color }}</h4>
+          </div>
+          <div>
+            <h4 class="text-white mt-4">Appears on:</h4>
+            <app-actor-films [actor]="actor"></app-actor-films>
+            <app-actor-starships [actor]="actor"></app-actor-starships>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button
+  [ngClass]="'no-hidden'"
+  *ngIf="showGoUpButton"
+  class="btn btn-dark"
+  (click)="onScrollTop()"
+>
+  GO UP
+</button>

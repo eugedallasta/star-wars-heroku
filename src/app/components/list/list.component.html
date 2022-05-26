@@ -1,0 +1,27 @@
+<div class="container">
+ <ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  template="<img src = './assets/darth-vader.gif'/>">
+</ngx-spinner>
+<div class="row" infinite-scroll (scrolled)="onScrollDown()">
+    <div class="col " *ngFor="let starship of shipslist">
+       <div class="card mx-auto">
+           <div class="card-inner">
+               <div class="header">
+                   <div (click)="goToDetail(starship.url)">
+                    <h2 class="text-muted text-center">{{starship.name}}</h2>
+                    <h5 class="text-muted text-center">Model: {{starship.model}}</h5> 
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+</div>
+<button
+[ngClass]="'no-hidden'" 
+*ngIf="showGoUpButton"
+class="btn btn-dark"
+(click)="onScrollTop()">
+GO UP
+</button>

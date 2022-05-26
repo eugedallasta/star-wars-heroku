@@ -1,0 +1,9 @@
+.card-img{
+    width:  10vw;
+}
+
+@media (max-width: 767.98px) { 
+.card-img{
+    width: fit-content;
+}
+}

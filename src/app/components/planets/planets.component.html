@@ -1,0 +1,33 @@
+<div class="container">
+ <ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  template="<img src = './assets/darth-vader.gif'/>">
+</ngx-spinner>
+<div class="row" infinite-scroll (scrolled)="onScrollDown()">
+    <input 
+    type="search" 
+    class="search form-control form-control-lg mx-auto border border-light" 
+    placeholder="Search for a planet here ..."
+    [(ngModel)]="filterPlanet"
+    name="filterPlanet">
+    <div class="col " *ngFor="let planet of planets | filter:filterPlanet">
+       <div class="card mx-auto">
+           <div class="card-inner">
+               <div class="header">
+                   <div (click)="goToPlanetDetail(planet.url)">
+                    <h2 class="text-muted text-center">{{planet.name}}</h2>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+</div>
+<button
+[ngClass]="'no-hidden'"
+*ngIf="showGoUpButton"
+class="btn btn-dark"
+(click)="onScrollTop()">
+GO UP
+</button>
+

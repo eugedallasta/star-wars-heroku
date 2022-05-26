@@ -1,0 +1,79 @@
+<div *ngIf="pilots.length > 0">
+  <h5 class="text-muted ms-5 mt-3 fs-3">Pilots</h5>
+  <div class="card mb-3 mx-auto border border-light"
+       style="max-width: 540px;"
+       *ngFor="let pilot of pilots">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="./assets/pilot.jpg" class="card-img mx-auto d-block" alt="Pilot">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body ms-5">
+          <h5 class="card-title fw-bold ms-3 text-muted">{{pilot.name |uppercase}}</h5>
+          <ul class="">
+              <li><small class="text-muted">Gender: {{pilot.gender}} </small></li>
+              <li><small class="text-muted">Birth Year: {{pilot.birth_year}}</small></li>
+              <li><small class="text-muted">Mass: {{pilot.mass}} kg</small></li>
+              <li><small class="text-muted">Eyes color: {{pilot.eye_color}} </small></li>
+              <li><small class="text-muted">Hair color: {{pilot.hair_color}} </small></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div *ngIf="pilots.length > 0">
+      <h5 class="text-muted ms-5 mt-3 fs-3">Pilots</h5>
+
+      <div class="mx-3 d-flex" *ngFor="let pilot of pilots">
+
+           <img
+        src="./assets/pilot.jpg"
+        class="img-fluid"
+        alt="StarShip"
+        
+      />
+
+
+
+
+            <ul class="border border-primary">
+              <li><small class="text-muted fw-bold">Name: {{pilot.name |uppercase}} </small></li>
+              <li><small class="text-muted">Gender: {{pilot.gender}} </small></li>
+              <li><small class="text-muted">Birth Year: {{pilot.birth_year}}</small></li>
+              <li><small class="text-muted">Mass: {{pilot.mass}} </small></li>
+              <li><small class="text-muted">Eyes color: {{pilot.eye_color}} </small></li>
+              <li><small class="text-muted">Hair color: {{pilot.hair_color}} </small></li>
+            </ul>
+    </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

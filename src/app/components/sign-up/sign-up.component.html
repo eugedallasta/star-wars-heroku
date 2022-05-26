@@ -1,0 +1,47 @@
+<div class="container" >
+  <div class="row">
+    <div class="col col-sm-10 col-md-8 mx-auto d-block">
+      <form>
+        <h1 class="h3 mb-3 fw-normal text-white">First time? Please sign up</h1>
+
+        <div class="form-floating mb-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Your name goes here"
+            [(ngModel)]="usuario.name" name="userName"
+          />
+          <label for="floatingInput">Name</label>
+        </div>
+
+        <div class="form-floating mb-2">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="name@example.com"
+            [(ngModel)]="usuario.email" name="userEmail"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="form-floating mb-2">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            [(ngModel)]="usuario.password" name="userPassword"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button 
+        class="w-100 btn btn-lg btn-dark" 
+        type="submit"
+        (click)="registrarse()">
+          Sign up
+        </button>
+         <label>Already register? <a [routerLink]="['/login']">Log in here</a></label>
+      </form>
+    </div>
+  </div>
+</div>
+

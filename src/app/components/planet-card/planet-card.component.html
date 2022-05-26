@@ -1,0 +1,32 @@
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  template="<img src = './assets/darth-vader.gif'/>">
+</ngx-spinner>
+  <div class="card mt-5 mx-auto border border-light planet"
+       style="max-width: 540px;"
+       *ngIf="planet$ | async as planet">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="./assets/planeta.jpeg" class="card-img mx-auto d-block" alt="Planet">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body ms-5">
+          <h5 class="card-title fw-bold ms-3 text-muted">{{ planet.name|uppercase }}</h5>
+          <ul>
+              <li><small class="text-muted fs-6">Created: {{ planet.created| date }}</small></li>
+              <li><small class="text-muted fs-6">Climate: {{ planet.climate }} people</small></li>
+              <li><small class="text-muted fs-6">Population: {{ planet.population }} ft</small></li>
+              <li><small class="text-muted fs-6">Gravity: {{ planet.gravity }}</small></li>
+              <li><small class="text-muted fs-6">Surface Water: {{ planet.surface_water }}</small></li>
+              <li><small class="text-muted fs-6">Terrain: {{ planet.terrain }}</small></li>
+              <li><small class="text-muted fs-6">Rotation: {{ planet.rotation_period }}</small></li>
+              <button class="btn btn-outline-light mt-5" (click)="goBackButton()">Go back</button>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+
+
+

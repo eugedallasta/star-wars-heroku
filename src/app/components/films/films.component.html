@@ -1,0 +1,24 @@
+<div *ngIf="films.length > 0">
+  <h5 class="text-muted ms-5 mt-3 fs-3">Appears on</h5>
+  <div class="card mb-3 mx-auto border border-light"
+       style="max-width: 540px;"
+       *ngFor="let film of films">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="./assets/episodes/{{film.episode_id}}.jpg" class="card-img mx-auto d-block" alt="StarShip">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body ms-5">
+          <h5 class="card-title fw-bold ms-3 text-muted">{{film.title|uppercase}}</h5>
+          <ul class="">
+              <li><small class="text-muted">Director: {{film.director}} </small></li>
+              <li><small class="text-muted">Episode: {{film.episode_id}}</small></li>
+              <li><small class="text-muted">Created: {{film.created|date}}</small></li>
+              <li><small class="text-muted">Producer: {{film.producer}} </small></li>
+              <li><small class="text-muted">Release: {{film.release_date}} </small></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

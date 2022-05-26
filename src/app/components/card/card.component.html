@@ -1,0 +1,56 @@
+<div class="container">
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  template="<img src = './assets/darth-vader.gif'/>">
+</ngx-spinner>
+  <div class="row justify-content-center" *ngIf="ship$ | async as ship">
+    <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-9 justify-content-center">
+      <div class="card" >
+        <img
+          [src]=[shipImage]
+          class="card-img-top mx-auto img-fluid"
+          [alt]="ship.name"
+          (error)="noImage()"
+        />
+        <h5 class="card-title text-muted ms-5 mt-3 fs-2">{{ ship.name }}</h5>
+        <div class="card-body d-flex justify-content-between">
+          <div class="left">
+            <ul>
+              <li><small class="text-muted fs-6">Created: {{ ship.created | date }}</small></li>
+              <li><small class="text-muted fs-6">Crew: {{ ship.crew }} people</small></li>
+              <li><small class="text-muted fs-6">Length: {{ ship.length }} ft</small></li>
+              <li><small class="text-muted fs-6">Class: {{ ship.starship_class }}</small></li>
+            </ul>
+          </div>
+          <div class="right">
+            <ul>
+              <li><small class="text-muted fs-6">Passengers: {{ ship.passengers }}</small></li>
+              <li><small class="text-muted fs-6">Max atmosphering speed: {{ ship.max_atmosphering_speed }}</small></li>
+              <li><small class="text-muted fs-6">Manufacturer: {{ ship.manufacturer }}</small></li>
+              <li><small class="text-muted fs-6">Cost in credits U$S: {{ ship.cost_in_credits }}</small></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+            <app-pilot [ship]="ship"></app-pilot>
+       </div>
+        <div>
+            <app-films [ship]="ship"></app-films>
+       </div>
+      </div>
+      <button class="btn btn-outline-light mb-5" (click)="goBackButton()">Go back</button>
+    </div>
+  </div>
+</div>
+
+
+
+          
+         
+          
+         
+          
+          
+          
+         
+        
